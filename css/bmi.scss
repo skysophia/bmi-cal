@@ -1,0 +1,366 @@
+/* bmi css setting */
+
+// 圓體字型
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+$yellow-color: #ffd366;
+$text-color: #424242;
+$level-good: #86d73d; // 理想
+$level-light: #2fbbf9; //過輕
+$level-over: #fd992a; //過重
+$level-light-fat: #ff6d03; //輕度肥胖
+$level-mid-fat: #fd6f03; //中度肥胖
+$level-over-fat: #fd1200; //重度肥胖
+
+//result color
+
+$level-1 : #86D73F;
+$level-2 : #31BAF9;
+$level-3 : #FF982D;
+$level-4 : #FF6C03;
+$level-5 : #FF6C03;
+$level-6 : #FF1200;
+
+
+@mixin placeholder($value) {
+  &.placeholder {
+    color: $value;
+  }
+  &:-moz-placeholder {
+    color: $value;
+  }
+  &::-webkit-input-placeholder {
+    color: $value;
+  }
+  &:-ms-input-placeholder {
+    color: $value;
+  }
+}
+
+body {
+  font-family: "cwTeXYen", sans-serif;
+  height: 100vh;
+  overflow: auto;
+  background-color: #f5f5f5;
+}
+
+#BMI-page{
+  height: 100%;
+}
+
+input {
+  @include placeholder(#9c9c9c);
+}
+.header {
+  background-color: #424242;
+  width: 100%;
+  height: 300px;
+}
+.container {
+  width: 1024px;
+}
+.bmi-form {
+  width: 100%;
+  height: auto;
+  background-color: #424242;
+  .bmi-form-left {
+    width: 120px;
+    height: auto;
+    .bmi-logo {
+      width: 117px;
+      height: 117px;
+      background: url(./../img/BMICLogo.png) center center no-repeat;
+      display: inline-block;
+    }
+  }
+  .bmi-form-center {
+    width: 250px;
+    height: auto;
+    margin-left: 72px;
+    margin-right: 53px;
+    .bmi-form-input {
+      label {
+        color: $yellow-color;
+        font-size: 18px;
+      }
+      input {
+        color: #b2b2b2;
+        border-radius: 10px;
+        border: 2px solid $yellow-color;
+        background: #646464;
+        @include placeholder(#9c9c9c);
+      }
+    }
+  }
+  .bmi-form-right {
+    .bmi-form-btn {
+      width: 120px;
+      height: 120px;
+      cursor: pointer;
+      .bmi-btn {
+        width: 120px;
+        height: 120px;
+        line-height: 100px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: $yellow-color;
+        color: #474536;
+        font-size: 26px;
+        font-weight: 700;
+        &:hover{
+            box-shadow: 0px 0px 20px #e0a159
+        }
+        &:focus{
+            background-color: #DEA821;
+        }
+      }
+
+    }
+    .bmi-result-btn{
+        width: 120px;
+        height: 120px;
+        .bmi-btn{
+            width: 120px;
+            height: 120px;
+            line-height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            background-color: transparent;  
+            border:7px solid grey;
+            position: relative;
+            color:grey;
+            .bmi-no{
+                display: inline-block;
+                position: absolute;
+                width:120px;
+                left:-6px;
+                top:0px;
+                font-size: 32px;
+            } 
+            .bmi-little{
+                display: inline-block;
+                position: absolute;
+                margin-top:20px;
+                width:120px;
+                left:-3px;
+                top:7px;
+                font-size: 14px;
+            }
+            .reload{
+                width:30px;
+                height: 30px;
+                text-align: center;
+                vertical-align: middle;
+                display: inline-block;
+                background-color: $level-1;
+                line-height: 30px;
+                position: absolute;
+                right: -7px;
+                bottom:2px;
+                border-radius: 50%;
+                cursor: pointer;
+                background:url("./../img/icons_loop.png") center center no-repeat;
+            }      
+            &.level-01{
+                color:$level-1;
+                border-color:$level-1;
+                .reload{
+                    background-color: $level-1;
+                }
+            }
+            &.level-02{
+                color:$level-2;
+                border-color:$level-2;
+                .reload{
+                    background-color: $level-2;
+                }
+            }
+            &.level-03{
+                color:$level-3;
+                border-color:$level-3;
+                .reload{
+                  background-color: $level-3;
+              }
+            }
+            &.level-04{
+                color:$level-4;
+                border-color:$level-4;
+                .reload{
+                  background-color: $level-4;
+              }
+            }
+            &.level-05{
+                color:$level-5;
+                border-color:$level-5;
+                .reload{
+                  background-color: $level-5;
+              }
+            }
+            &.level-06{
+                color:$level-6;
+                border-color:$level-6;
+                .reload{
+                  background-color: $level-6;
+              } 
+            }
+        }
+
+    }
+
+  }
+  .bmi-word-block{
+    position: relative;
+  }
+  .bmi-result-word{
+      width:130px;
+      height: 120px;
+      text-align: center;
+      color:$level-1;
+      font-size: 32px;
+      line-height:120px; 
+      position: absolute;
+      margin:-60px 0 0 0;
+      &.level-01{
+        color:$level-1;
+      }
+      &.level-02{
+        color:$level-2;
+      }
+      &.level-03{
+        color:$level-3;
+      }
+      &.level-04{
+        color:$level-4;
+      }
+      &.level-05{
+        color:$level-5;
+      }
+      &.level-06{
+        color:$level-6;
+      }
+
+
+
+
+
+
+  }
+}
+
+.bmi-record {
+  padding: 30px 10px 50px 10px;
+  margin-bottom:110px;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  text-align: center;
+  h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    display: inline-block;
+    margin-bottom:20px;
+  }
+  .bmi-record-list{
+    width:626px;
+  }
+  .bmi-history {
+    display: block;
+    height: 62px;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    width:665px;
+    list-style: none;
+    border-left: 7px solid #86d73d;
+    margin-bottom: 16px;
+    &.normal {
+      border-color: $level-good;
+    }
+    &.light {
+      border-color: $level-light;
+    }
+    &.over {
+      border-color: $level-over;
+    }
+    &.light-fat {
+      border-color: $level-light-fat;
+    }
+    &.mid-fat {
+      border-color: $level-mid-fat;
+    }
+    &.over-fat {
+      border-color: $level-over-fat;
+    }
+    .bmi-history-li {
+      color: $text-color;
+      font-size: 20px;
+      height: 62px;
+      line-height: 62px;
+      display: inline-block;
+      float: left;
+      text-align: left;
+      min-width: 110px;
+      background-color: #fff;
+      span {
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      span.level-word{
+        font-size: 20px;
+        margin-right:0;
+      }
+      &.bmi-word {
+        padding-left: 20px;
+        font-weight: 700;
+      }
+      &.bmi-value {
+        padding-left: 20px;
+        width:130px;
+      }
+      &.bmi-weight {
+        padding-left: 20px;
+        width:130px;
+      }
+      &.bmi-height {
+        padding-left: 20px;
+        width:130px;
+      }
+      &.bmi-date {
+        width: auto;
+        padding-left: 20px;
+        text-align: right;
+        width:150px;
+      }
+    }
+  }
+}
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
+  background-color: $yellow-color;
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  .container {
+    .logo-img {
+      background: url("https://hexschool.github.io/JavaScript_HomeWork/assets/BMICLogo.png")
+        center center no-repeat;
+      width: 100%;
+      height: 55px;
+      display: inline-block;
+      margin: 10px auto;
+    }
+    .footer-word{
+      display: block;
+      width:100%;
+      font-size: 12px;
+      height: 30px;
+      line-height: 25px;
+    }
+  }
+}

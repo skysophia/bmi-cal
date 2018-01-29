@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>線上 BMI 計算機-作業 by Sky Sophia </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/sweetalert.css">
+    <link rel="stylesheet" href="./css/bmi.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="./js/sweetalert.min.js"></script>
+    <script src="./js/vue.2.2.6.js"></script>
+</head>
+
+<body>
+    <div id="BMI-page">
+        <div class="header d-flex flex-row align-items-center">
+            <div class="bmi-form container d-flex flex-row justify-content-center align-items-center">
+                <div class="bmi-form-left d-flex justify-content-center">
+                    <span class="bmi-logo"></span>
+                </div>
+                <div class="bmi-form-center d-flex justify-content-center">
+                    <form>
+                        <div class="form-group bmi-form-input">
+                            <label for="for-height-input" class="mb-0">身高 cm</label>
+                            <input v-model="inputHeight" type="text" class="form-control" id="heightInput" placeholder="請輸入身高">
+                        </div>
+                        <div class="form-group bmi-form-input">
+                            <label for="for-weight-input" class="mb-0">體重 kg</label>
+                            <input v-model="inputWeight" type="text" class="form-control" id="weightInput" placeholder="請輸入體重">
+                        </div>
+                    </form>
+                </div>
+                <div class="bmi-form-right d-flex justify-content-center"  v-if="!bmiNo">
+                                    <div class="bmi-form-btn">
+                                        <span class="btn btn-lg bmi-btn"  v-on:click="getResult(inputHeight,inputWeight)">看結果</span>
+                                    </div>
+                </div>
+                <div class="bmi-form-right d-flex justify-content-center" v-else>
+                              <div class="bmi-result-btn">
+                                  <div class="btn btn-lg bmi-btn" :class="{'level-01':bmiResult ==1 ,'level-02':bmiResult ==2,'level-03':bmiResult == 3, 'level-04': bmiResult == 4, 'level-05': bmiResult == 5, 'level-06': bmiResult ==6}">
+                                                  <span class="bmi-no">{{bmiNo}}</span>
+                                                  <span class="bmi-little">BMI</span>
+                                                  <span class="reload" v-on:click="renew()"></span>
+                                  </div>
+                              </div>
+                              <div class="bmi-word-block">
+                                          <div class="bmi-result-word" :class="{'level-01':bmiResult ==1 ,'level-02':bmiResult ==2,'level-03':bmiResult == 3, 'level-04': bmiResult == 4, 'level-05': bmiResult == 5, 'level-06': bmiResult ==6}">
+                                              <span v-if="bmiResult==1">理想</span>
+                                              <span v-if="bmiResult==2">過輕</span>
+                                              <span v-if="bmiResult==3">過重</span>
+                                              <span v-if="bmiResult==4">輕度肥胖</span>
+                                              <span v-if="bmiResult==5">中度肥胖</span>
+                                              <span v-if="bmiResult==6">重度肥胖</span>
+                                          </div>
+                              </div>
+                </div>
+            </div>
+        </div>
+        <main role="main" class="container bmi-record">
+            <h3>BMI 紀錄</h3>
+            <div>
+                <ul class="bmi-history normal" v-for="(bmilist,index) in bmi_list" :class="{'normal':bmilist.bmilevel ==1 ,'light':bmilist.bmilevel ==2,'over':bmilist.bmilevel == 3, 'light-fat': bmilist.bmilevel == 4, 'mid-fat': bmilist.bmilevel == 5, 'over-fat': bmilist.bmilevel ==6}">
+                    <li class="bmi-history-li bmi-word">
+                        <span class="level-word" v-if="bmilist.bmilevel==1">理想</span>
+                        <span class="level-word" v-if="bmilist.bmilevel==2">過輕</span>
+                        <span class="level-word" v-if="bmilist.bmilevel==3">過重</span>
+                        <span class="level-word" v-if="bmilist.bmilevel==4">輕度肥胖</span>
+                        <span class="level-word" v-if="bmilist.bmilevel==5">中度肥胖</span>
+                        <span class="level-word" v-if="bmilist.bmilevel==6">重度肥胖</span>
+                    </li>
+                    <li class="bmi-history-li bmi-value">
+                        <span>BMI</span>{{bmilist.bmi}}</li>
+                    <li class="bmi-history-li bmi-weight">
+                        <span>weight</span>{{bmilist.weight}} kg</li>
+                    <li class="bmi-history-li bmi-height">
+                        <span>height</span>{{bmilist.height}} cm</li>
+                    <li class="bmi-history-li bmi-date">
+                        <span>{{bmilist.date}}</span>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="logo-img"></div>
+                <div class="footer-word">homework by Sky Sophia</div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
