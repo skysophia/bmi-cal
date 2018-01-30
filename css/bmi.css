@@ -62,99 +62,105 @@ input:-ms-input-placeholder {
         color: #9c9c9c; }
       .bmi-form .bmi-form-center .bmi-form-input input:-ms-input-placeholder {
         color: #9c9c9c; }
-  .bmi-form .bmi-form-right .bmi-form-btn {
-    width: 120px;
-    height: 120px;
-    cursor: pointer; }
-    .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn {
-      width: 120px;
-      height: 120px;
-      line-height: 100px;
-      border-radius: 50%;
-      text-align: center;
-      background-color: #ffd366;
-      color: #474536;
-      font-size: 26px;
-      font-weight: 700; }
-      .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn:hover {
-        -webkit-box-shadow: 0px 0px 20px #e0a159;
-        box-shadow: 0px 0px 20px #e0a159; }
-      .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn:focus {
-        background-color: #DEA821; }
-  .bmi-form .bmi-form-right .bmi-result-btn {
-    width: 120px;
-    height: 120px; }
-    .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn {
-      width: 120px;
-      height: 120px;
-      line-height: 100px;
-      border-radius: 50%;
-      text-align: center;
-      background-color: transparent;
-      border: 7px solid grey;
-      position: relative;
-      color: grey; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .bmi-no {
-        display: inline-block;
-        position: absolute;
-        width: 120px;
-        left: -6px;
-        top: 0px;
-        font-size: 32px; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .bmi-little {
-        display: inline-block;
-        position: absolute;
-        margin-top: 20px;
-        width: 120px;
-        left: -3px;
-        top: 7px;
-        font-size: 14px; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .reload {
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        vertical-align: middle;
-        display: inline-block;
-        background-color: #86D73F;
-        line-height: 30px;
-        position: absolute;
-        right: -7px;
-        bottom: 2px;
-        border-radius: 50%;
-        cursor: pointer;
-        background: url("./../img/icons_loop.png") center center no-repeat; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-01 {
-        color: #86D73F;
-        border-color: #86D73F; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-01 .reload {
-          background-color: #86D73F; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-02 {
-        color: #31BAF9;
-        border-color: #31BAF9; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-02 .reload {
-          background-color: #31BAF9; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-03 {
-        color: #FF982D;
-        border-color: #FF982D; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-03 .reload {
-          background-color: #FF982D; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-04 {
-        color: #FF6C03;
-        border-color: #FF6C03; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-04 .reload {
-          background-color: #FF6C03; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-05 {
-        color: #FF6C03;
-        border-color: #FF6C03; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-05 .reload {
-          background-color: #FF6C03; }
-      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-06 {
-        color: #FF1200;
-        border-color: #FF1200; }
-        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-06 .reload {
-          background-color: #FF1200; }
-  .bmi-form .bmi-word-block {
+  .bmi-form .bmi-form-right {
     position: relative; }
+    .bmi-form .bmi-form-right .bmi-form-btn {
+      width: 120px;
+      height: 120px;
+      cursor: pointer; }
+      .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn {
+        width: 120px;
+        height: 120px;
+        line-height: 100px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: #ffd366;
+        color: #474536;
+        font-size: 26px;
+        font-weight: 700; }
+        .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn:hover {
+          -webkit-box-shadow: 0px 0px 20px #e0a159;
+          box-shadow: 0px 0px 20px #e0a159; }
+        .bmi-form .bmi-form-right .bmi-form-btn .bmi-btn:focus {
+          background-color: #DEA821; }
+    .bmi-form .bmi-form-right .bmi-result-btn {
+      width: 120px;
+      height: 120px; }
+      .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn {
+        width: 120px;
+        height: 120px;
+        line-height: 100px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: transparent;
+        border: 7px solid grey;
+        position: relative;
+        color: grey; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .bmi-no {
+          display: inline-block;
+          position: absolute;
+          width: 120px;
+          left: -6px;
+          top: 0px;
+          font-size: 32px; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .bmi-little {
+          display: inline-block;
+          position: absolute;
+          margin-top: 20px;
+          width: 120px;
+          left: -3px;
+          top: 7px;
+          font-size: 14px; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn .reload {
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          vertical-align: middle;
+          display: inline-block;
+          background-color: #86D73F;
+          line-height: 30px;
+          position: absolute;
+          right: -7px;
+          bottom: 2px;
+          border-radius: 50%;
+          cursor: pointer;
+          background: url("./../img/icons_loop.png") center center no-repeat; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-01 {
+          color: #86D73F;
+          border-color: #86D73F; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-01 .reload {
+            background-color: #86D73F; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-02 {
+          color: #31BAF9;
+          border-color: #31BAF9; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-02 .reload {
+            background-color: #31BAF9; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-03 {
+          color: #FF982D;
+          border-color: #FF982D; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-03 .reload {
+            background-color: #FF982D; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-04 {
+          color: #FF6C03;
+          border-color: #FF6C03; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-04 .reload {
+            background-color: #FF6C03; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-05 {
+          color: #FF6C03;
+          border-color: #FF6C03; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-05 .reload {
+            background-color: #FF6C03; }
+        .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-06 {
+          color: #FF1200;
+          border-color: #FF1200; }
+          .bmi-form .bmi-form-right .bmi-result-btn .bmi-btn.level-06 .reload {
+            background-color: #FF1200; }
+  .bmi-form .bmi-word-block {
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 60px;
+    width: 130px;
+    height: 120px; }
   .bmi-form .bmi-result-word {
     width: 130px;
     height: 120px;
@@ -185,6 +191,11 @@ input:-ms-input-placeholder {
   height: 100%;
   min-height: 120px;
   text-align: center; }
+  .bmi-record:after {
+    content: '';
+    height: 120px;
+    display: inline-block;
+    width: 100%; }
   .bmi-record h3 {
     width: 100%;
     text-align: center;
@@ -224,7 +235,10 @@ input:-ms-input-placeholder {
       float: left;
       text-align: left;
       min-width: 110px;
-      background-color: #fff; }
+      background-color: #fff;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis; }
       .bmi-record .bmi-history .bmi-history-li span {
         font-size: 12px;
         margin-right: 10px; }
@@ -236,13 +250,13 @@ input:-ms-input-placeholder {
         font-weight: 700; }
       .bmi-record .bmi-history .bmi-history-li.bmi-value {
         padding-left: 20px;
-        width: 130px; }
+        width: 110px; }
       .bmi-record .bmi-history .bmi-history-li.bmi-weight {
         padding-left: 20px;
-        width: 130px; }
+        width: 140px; }
       .bmi-record .bmi-history .bmi-history-li.bmi-height {
         padding-left: 20px;
-        width: 130px; }
+        width: 140px; }
       .bmi-record .bmi-history .bmi-history-li.bmi-date {
         width: auto;
         padding-left: 20px;

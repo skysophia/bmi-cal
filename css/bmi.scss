@@ -93,6 +93,7 @@ input {
     }
   }
   .bmi-form-right {
+    position:relative;
     .bmi-form-btn {
       width: 120px;
       height: 120px;
@@ -209,7 +210,12 @@ input {
 
   }
   .bmi-word-block{
-    position: relative;
+    position: absolute;
+    margin-left:120px;
+    margin-top:60px;
+    width:130px;
+    height:120px;
+
   }
   .bmi-result-word{
       width:130px;
@@ -255,6 +261,12 @@ input {
   height: 100%;
   min-height: 120px;
   text-align: center;
+  &:after{
+    content: '';
+    height: 120px;
+    display: inline-block;
+    width: 100%;  
+  }
   h3 {
     width: 100%;
     text-align: center;
@@ -303,6 +315,8 @@ input {
       text-align: left;
       min-width: 110px;
       background-color: #fff;
+      overflow:hidden;
+      text-overflow:ellipsis;
       span {
         font-size: 12px;
         margin-right: 10px;
@@ -317,15 +331,15 @@ input {
       }
       &.bmi-value {
         padding-left: 20px;
-        width:130px;
+        width:110px;
       }
       &.bmi-weight {
         padding-left: 20px;
-        width:130px;
+        width:140px;
       }
       &.bmi-height {
         padding-left: 20px;
-        width:130px;
+        width:140px;
       }
       &.bmi-date {
         width: auto;
