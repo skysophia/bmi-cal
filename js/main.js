@@ -54,13 +54,15 @@
                     if (!h && !w) { return swal("Error", "請輸入身高體重！", "error"); }
                     if (h && !w) { return swal("Error", "請輸入身高！", "error"); }
                     if (!h && w) { return swal("Error", "請輸入體重！", "error"); }
-                    if( h == 0 || w == 0) { h=''; w=''; return swal("Error", "不可為 0 ", "error") }
+                    if( h == 0 && w != 0) { h='';return swal("Error", "不可為 0 ", "error") }
+                    if( h != 0 && w == 0) { w='';return swal("Error", "不可為 0 ", "error") }
                     this.calBMI();
                 },
                 calBMI: function() {
                     var vm = this;
-                    var h = vm.inputHeight / 100;
-                    var w = vm.inputWeight;
+                    var h = parseFloat(vm.inputHeight) / 100;
+                    var w = parseFloat(vm.inputWeight);
+                    console.log('h'+h)
                     var word = '';
                     var level = '';
                     var d = new Date();
@@ -128,8 +130,8 @@
                     }
                     if (bmi != 0) {
                         bmiHistory.push({
-                            height: h * 100,
-                            weight: w,
+                            height: parseFloat(h) * 100,
+                            weight: parseFloat(w),
                             bmi: bmi,
                             word: word,
                             bmilevel: level,
