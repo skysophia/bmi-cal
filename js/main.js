@@ -62,7 +62,6 @@
                     var vm = this;
                     var h = parseFloat(vm.inputHeight) / 100;
                     var w = parseFloat(vm.inputWeight);
-                    console.log('h'+h)
                     var word = '';
                     var level = '';
                     var d = new Date();
